@@ -14,9 +14,20 @@ const ProjectSchema = new mongoose.Schema({
         type: String,
         required: [true, "Author Name is required"]
     },
-    issueIdList: [
+    issues: [
         {
-            issueId: {type: mongoose.Types.ObjectId},
+            name : {
+                type: String,
+            },
+            description: {
+                type: String,
+            },
+            labels: [{
+                    type: String,
+            }],
+            author: {
+                type: String,
+            }
         }
     ]
 })

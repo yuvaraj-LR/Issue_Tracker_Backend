@@ -11,7 +11,7 @@ router.route("/getAllProject").get(getAllProject);
 router.route("/getAllIssue").get(getAllIssue);
 router.route("/getIssueById").get(getSpecificIssue);
 router.route("/searchProject").get(searchProject);
-router.route("/filterIssue/:projectId").get(filterIssue);
+router.route("/filterIssue").get(filterIssue);
 
 // POST routes
 router.route("/createProject").post(createProject);

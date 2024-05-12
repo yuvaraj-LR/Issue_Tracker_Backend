@@ -1,17 +1,15 @@
 import { ErrorHandler } from "../../../utils/errorHandler.js";
-import { createIssueRepo, findIssueRepo } from "../model/issue/issues.repository.js";
-import { createProjectRepo, findProjectRepo, updateProjectRepo } from "../model/project/project.repository.js";
+import { createProjectRepo, findProjectRepo, updateProjectRepo, filterIssueRepo } from "../model/issues.repository.js";
 
 export const createProject = async(req, res, next) => {
     try {
-        console.log("I am calledd...");
         const {name, description, author} = req.body;
 
         const project = {name, description, author};
         console.log(project, "projecttt.....");
 
         const newProject = await createProjectRepo(project);
-        return res.status(200).json({status: true, project: newProject});
+        return res.status(200).json({status: true, msg: "New Project Added Successfully.", project: newProject});
     } catch (error) {
         console.log(error, "errorrrr");
         return next(new ErrorHandler(402, "Error in create project."))
@@ -23,14 +21,10 @@ export const createIssue = async(req, res, next) => {
         const { projectId } = req.query;
         const {name, description, labels, author} = req.body;
 
-        const issue = {projectId, name, description, labels, author};
+        const updateIssue = await updateProjectRepo(projectId, name, description, labels, author);
+        console.log(updateIssue, "updateIssuee...");
 
-        const newIssue = await createIssueRepo(issue);
-        console.log(newIssue, "Issueee....");
-
-        await updateProjectRepo(projectId, newIssue._id);
-
-        return res.status(200).json({status: true, project: newIssue});
+        return res.status(200).json({status: true, msg: "New Issue Added Successfully."});
     } catch (error) {
         console.log(error, "error....");
         return next(new ErrorHandler(402, "Error in create issue."))
@@ -39,8 +33,8 @@ export const createIssue = async(req, res, next) => {
 
 export const getAllProject = async(req, res, next) => {
     try {
-        const projects = await findProjectRepo();
-        console.log(projects);
+        const projects = await findProjectRepo({});
+        console.log(projects, "projectt...");
 
         if(!projects || projects.length === 0) {
             return next(new ErrorHandler(404, "No project available."));
@@ -56,33 +50,33 @@ export const getAllProject = async(req, res, next) => {
 export const getAllIssue = async(req, res, next) => {
     const {projectId} = req.query;
 
-    const issues = await findIssueRepo({projectId});
-    console.log(issues, "isssueessss");
+    const project = await findProjectRepo({projectId});
+    console.log(project[0]?.issues, "isssueessss");
 
-    if(!issues || issues.length === 0) {
+    if(!project || project.length === 0) {
         return next(new ErrorHandler(404, "Incorrect ProjectId."));
     }
 
-    return res.status(200).json({status: true, issue: issues});
+    return res.status(200).json({status: true, issue: project[0]?.issues});
 }
 
 export const getSpecificIssue = async(req, res, next) => {
-    const {issueId} = req.query;
-    console.log(issueId);
+    const {projectId, issueId} = req.query;
 
-    const issue = await findIssueRepo({"_id": issueId});
+    const project = await findProjectRepo({projectId});
+    console.log(project, "project");
 
-    if(!issue || issue.length === 0) {
+    if(!project || project.length === 0) {
         return next(new ErrorHandler(404, "Incorrect IssueId."));
     }
 
+    const issue = project[0].issues.find(issue => issue._id == issueId);
     return res.status(200).json({status: true, issue: issue})
 }
 
 export const searchProject = async(req, res, next) => {
     const {projectName} = req.body;
-
-    const project = await findIssueRepo({"name": projectName});
+    const project = await findProjectRepo({"name": projectName});
 
     if(!project || project.length === 0) {
         return next(new ErrorHandler(404, "No project found!"));
@@ -92,7 +86,30 @@ export const searchProject = async(req, res, next) => {
 }
 
 export const filterIssue = async(req, res, next) => {
-    
+    try {
+        const { projectId } = req.query;
+        const { labels } = req.body;
+
+        const project = await findProjectRepo({"_id": projectId});
+        console.log(project, "project");
+
+        if(!project || project.length === 0) {
+            return next(new ErrorHandler(404, "Incorrect IssueId."));
+        }
+
+        const filteredIssues = project[0].issues.filter(issue => {
+            return labels.every(label => issue.labels.includes(label));
+        });
+
+        if(!filteredIssues || filteredIssues.length == 0) {
+            return next(new ErrorHandler(404, "No Result Found!"));
+        }
+
+        return res.status(200).json({status: true, issues: filteredIssues });
+    } catch (error) {
+        console.log(error, "error in filterissue...");
+        return next(new ErrorHandler(404, "No project found!"));
+    }
 }
 
 export const deleteProject = async(req, res, next) => {
