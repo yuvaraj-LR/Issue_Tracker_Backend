@@ -7,18 +7,18 @@ import {
 const router = express.Router();
 
 // GET routes
-router.route("getAllProject").get(getAllProject);
-router.route("getAllIssue/:projectId").get(getAllIssue);
-router.route("getIssueById/:projectId/:issueId").get(getSpecificIssue);
-router.route("searchProject").get(searchProject);
-router.route("filterIssue/:projectId").get(filterIssue);
+router.route("/getAllProject").get(getAllProject);
+router.route("/getAllIssue").get(getAllIssue);
+router.route("/getIssueById/:projectId/:issueId").get(getSpecificIssue);
+router.route("/searchProject").get(searchProject);
+router.route("/filterIssue/:projectId").get(filterIssue);
 
 // POST routes
-router.route("createProject").post(createProject);
-router.route("createIssue/:projectId").post(createIssue);
+router.route("/createProject").post(createProject);
+router.route("/createIssue").post(createIssue);
 
 // DELETE routes
-router.route("deleteProject/:projectId").delete(deleteProject);
-router.route("deleteIssue/:projectId/:issueId").delete(deleteIssue);
+router.route("/deleteProject/:projectId").delete(deleteProject);
+router.route("/deleteIssue/:projectId/:issueId").delete(deleteIssue);
 
 export default router;
