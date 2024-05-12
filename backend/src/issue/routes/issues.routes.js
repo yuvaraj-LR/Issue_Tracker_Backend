@@ -9,7 +9,7 @@ const router = express.Router();
 // GET routes
 router.route("/getAllProject").get(getAllProject);
 router.route("/getAllIssue").get(getAllIssue);
-router.route("/getIssueById/:projectId/:issueId").get(getSpecificIssue);
+router.route("/getIssueById").get(getSpecificIssue);
 router.route("/searchProject").get(searchProject);
 router.route("/filterIssue/:projectId").get(filterIssue);
 

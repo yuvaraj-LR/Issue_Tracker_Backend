@@ -5,8 +5,8 @@ export const createProjectRepo = async(project) => {
     return await new ProjectModel(project).save();
 }
 
-export const findProject = async(option) => {
-    return await ProjectModel.findOne(option);
+export const findProjectRepo = async({option}) => {
+    return await ProjectModel.find(option);
 }
 
 export const updateProjectRepo = async(projectId, issueId) => {
