@@ -1,5 +1,5 @@
 import { ErrorHandler } from "../../../utils/errorHandler.js";
-import { createProjectRepo, findProjectRepo, updateProjectRepo, filterIssueRepo } from "../model/issues.repository.js";
+import { createProjectRepo, findProjectRepo, updateProjectRepo, deleteProjectRepo } from "../model/issues.repository.js";
 
 export const createProject = async(req, res, next) => {
     try {
@@ -113,10 +113,46 @@ export const filterIssue = async(req, res, next) => {
 }
 
 export const deleteProject = async(req, res, next) => {
+    try {
+        const {projectId} = req.query;
+        const deletedProject = await deleteProjectRepo(projectId);
 
+        if(!deletedProject?.acknowledged) {
+            return next(new ErrorHandler(404, "No project found to delete.!"));
+        }
+        
+        return res.status(200).json({status: true, msg: "Project Deleted Successfully."})
+    } catch (error) {
+        console.log(error, "error in deleteProject...");
+        return next(new ErrorHandler(404, "Error in delete project."))
+    }
 }
 
 export const deleteIssue = async(req, res, next) => {
+    try {
+        const {projectId, issueId} = req.query;
 
+        const project = await findProjectRepo({"_id": projectId});
+        console.log(project, "project");
+
+        if(!project || project.length === 0) {
+            return next(new ErrorHandler(404, "Incorrect ProjectId."));
+        }
+
+        const issueIndex = project[0].issues.findIndex(issue => issue._id == issueId);
+        console.log(issueIndex, "indexx...");
+
+        if(issueIndex == -1) {
+            return next(new ErrorHandler(404, "Incorrect IssueId."))
+        }
+
+        project[0].issues.splice(issueIndex, 1);
+        await project[0].save();
+
+        return res.status(200).json({status: true, msg: "Issue Deleted Successfully."})
+    } catch (error) {
+        console.log(error, "error in deleteIsssuee....");
+        return next(new ErrorHandler(404, "Error in delete issue."))
+    }
 }
 

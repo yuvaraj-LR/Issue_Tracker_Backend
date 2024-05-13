@@ -18,7 +18,7 @@ router.route("/createProject").post(createProject);
 router.route("/createIssue").post(createIssue);
 
 // DELETE routes
-router.route("/deleteProject/:projectId").delete(deleteProject);
-router.route("/deleteIssue/:projectId/:issueId").delete(deleteIssue);
+router.route("/deleteProject").delete(deleteProject);
+router.route("/deleteIssue").delete(deleteIssue);
 
 export default router;

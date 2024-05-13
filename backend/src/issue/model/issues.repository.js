@@ -23,7 +23,6 @@ export const updateProjectRepo = async(projectId, name, description, labels, aut
     )
 }
 
-export const filterIssueRepo = async (projectId, labels) => {
-    // Add your code for filter condition.
-    
+export const deleteProjectRepo = async (projectId) => {
+    return await IssueModel.deleteOne({"_id": projectId});
 }
