@@ -14,6 +14,9 @@ const ProjectSchema = new mongoose.Schema({
         type: String,
         required: [true, "Author Name is required"]
     },
+    timestamp: {
+        type: String,
+    },
     issues: [
         {
             name : {
@@ -23,9 +26,12 @@ const ProjectSchema = new mongoose.Schema({
                 type: String,
             },
             labels: [{
-                    type: String,
+                type: String,
             }],
             author: {
+                type: String,
+            },
+            timestamp: {
                 type: String,
             }
         }

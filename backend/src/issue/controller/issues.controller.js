@@ -5,7 +5,10 @@ export const createProject = async(req, res, next) => {
     try {
         const {name, description, author} = req.body;
 
-        const project = {name, description, author};
+        const timestamp = new Date().toDateString();
+        console.log(timestamp, "stampp...");
+
+        const project = {name, description, author, timestamp};
         console.log(project, "projecttt.....");
 
         const newProject = await createProjectRepo(project);
@@ -19,9 +22,11 @@ export const createProject = async(req, res, next) => {
 export const createIssue = async(req, res, next) => {
     try {
         const { projectId } = req.query;
-        const {name, description, labels, author} = req.body;
+        const { name, description, labels, author} = req.body;
 
-        const updateIssue = await updateProjectRepo(projectId, name, description, labels, author);
+        const timestamp = new Date().toDateString();
+
+        const updateIssue = await updateProjectRepo(projectId, name, description, labels, author, timestamp);
         console.log(updateIssue, "updateIssuee...");
 
         return res.status(200).json({status: true, msg: "New Issue Added Successfully."});

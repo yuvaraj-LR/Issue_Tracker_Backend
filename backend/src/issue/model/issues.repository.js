@@ -9,7 +9,7 @@ export const findProjectRepo = async(option) => {
     return await IssueModel.find(option);
 }
 
-export const updateProjectRepo = async(projectId, name, description, labels, author) => {
+export const updateProjectRepo = async(projectId, name, description, labels, author, timestamp) => {
     return await IssueModel.updateOne(
         {_id: projectId},
         {$push : {
@@ -17,7 +17,8 @@ export const updateProjectRepo = async(projectId, name, description, labels, aut
                 name: name,
                 description: description,
                 labels: labels,
-                author: author
+                author: author,
+                timestamp: timestamp
             }
         }}
     )
