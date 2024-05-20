@@ -7,12 +7,11 @@ console.log(process.env.BUILDENV === "dev" ? `Currently our path is in local env
 
 console.log("<---------------------------------------------------------------------->");
 
-const URL = process.env.BUILDENV === "dev" ? process.env.PORT : process.env.LIVEURL;
-const serverStar = app.listen(URL, async (err) => {
+const serverStar = app.listen(process.env.PORT, async (err) => {
   if (err) {
     console.log(`server failed with error ${err}`);
   } else {
     await connectDB();
-    console.log(`server is running at ${URL}`);
+    console.log(`server is running at ${process.env.PORT}`);
   }
 });
