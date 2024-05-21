@@ -5,8 +5,15 @@ export const createProject = async(req, res, next) => {
     try {
         const {name, description, author} = req.body;
 
-        const timestamp = new Date().toDateString();
-        console.log(timestamp, "stampp...");
+        const now = new Date();
+
+        // Format the date to "May 20 2024"
+        const timestamp = new Intl.DateTimeFormat('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+        }).format(now);
+        console.log(timestamp, "formattedDate...");
 
         const project = {name, description, author, timestamp};
         console.log(project, "projecttt.....");
@@ -39,7 +46,6 @@ export const createIssue = async(req, res, next) => {
 export const getAllProject = async(req, res, next) => {
     try {
         const projects = await findProjectRepo({});
-        console.log(projects, "projectt...");
 
         if(!projects || projects.length === 0) {
             return next(new ErrorHandler(404, "No project available."));
