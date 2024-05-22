@@ -48,7 +48,7 @@ export const getAllProject = async(req, res, next) => {
         const projects = await findProjectRepo({});
 
         if(!projects || projects.length === 0) {
-            return next(new ErrorHandler(404, "No project available."));
+            return next(new ErrorHandler(404, "There are currently no projects available. Please add a project to begin adding issues."));
         }
 
         return res.status(200).json({status: true, project: projects});
@@ -86,14 +86,19 @@ export const getSpecificIssue = async(req, res, next) => {
 }
 
 export const searchProject = async(req, res, next) => {
-    const {projectName} = req.body;
-    const project = await findProjectRepo({"name": projectName});
+    const {projectName, authorName} = req.body;
 
-    if(!project || project.length === 0) {
+    const project = await findProjectRepo({"name": projectName});
+    const author = await findProjectRepo({"author": authorName});
+    console.log(author, "author...");
+
+    if (project) {
+        return res.status(200).json({status: true, project });
+    } else if (author) {
+        return res.status(200).json({status: true, author });
+    } else {
         return next(new ErrorHandler(404, "No project found!"));
     }
-
-    return res.status(200).json({status: true, project: project})
 }
 
 export const filterIssue = async(req, res, next) => {
@@ -126,6 +131,8 @@ export const filterIssue = async(req, res, next) => {
 export const deleteProject = async(req, res, next) => {
     try {
         const {projectId} = req.query;
+        console.log(projectId, "idddd.....");
+
         const deletedProject = await deleteProjectRepo(projectId);
 
         if(!deletedProject?.acknowledged) {

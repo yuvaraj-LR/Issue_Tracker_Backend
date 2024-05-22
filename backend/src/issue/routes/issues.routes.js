@@ -10,12 +10,12 @@ const router = express.Router();
 router.route("/getAllProject").get(getAllProject);
 router.route("/getAllIssue").get(getAllIssue);
 router.route("/getIssueById").get(getSpecificIssue);
-router.route("/searchProject").get(searchProject);
-router.route("/filterIssue").get(filterIssue);
 
 // POST routes
 router.route("/createProject").post(createProject);
 router.route("/createIssue").post(createIssue);
+router.route("/searchProject").post(searchProject);
+router.route("/filterIssue").post(filterIssue);
 
 // DELETE routes
 router.route("/deleteProject").delete(deleteProject);
