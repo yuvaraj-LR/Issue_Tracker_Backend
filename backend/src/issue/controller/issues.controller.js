@@ -90,12 +90,14 @@ export const searchProject = async(req, res, next) => {
 
     const project = await findProjectRepo({"name": projectName});
     const author = await findProjectRepo({"author": authorName});
+    console.log(project, "project....");
     console.log(author, "author...");
 
-    if (project) {
+    if (project && project.length > 0) {
         return res.status(200).json({status: true, project });
-    } else if (author) {
-        return res.status(200).json({status: true, author });
+    } else if (author  && author.length > 0) {
+        console.log("I am returning the author data...");
+        return res.status(200).json({status: true, "project": author });
     } else {
         return next(new ErrorHandler(404, "No project found!"));
     }
