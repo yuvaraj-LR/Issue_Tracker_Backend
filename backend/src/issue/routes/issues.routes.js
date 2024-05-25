@@ -1,7 +1,7 @@
 import express from "express";
 
 import {
-    createIssue, createProject, deleteIssue, deleteProject, filterIssue, getAllIssue, getAllProject, getSpecificIssue, searchProject
+    createIssue, createProject, deleteIssue, deleteProject, filterIssue, getAllIssue, getAllProject, getSpecificProject, getSpecificIssue, searchProject
 } from "../controller/issues.controller.js"
 
 const router = express.Router();
@@ -9,6 +9,7 @@ const router = express.Router();
 // GET routes
 router.route("/getAllProject").get(getAllProject);
 router.route("/getAllIssue").get(getAllIssue);
+router.route("/getProjectById").get(getSpecificProject);
 router.route("/getIssueById").get(getSpecificIssue);
 
 // POST routes

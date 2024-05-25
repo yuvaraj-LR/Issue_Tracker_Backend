@@ -85,6 +85,19 @@ export const getSpecificIssue = async(req, res, next) => {
     return res.status(200).json({status: true, issue: issue})
 }
 
+export const getSpecificProject = async(req, res, next) => {
+    const {projectId} = req.query;
+
+    const project = await findProjectRepo({"_id":projectId});
+    console.log(project, "projectttt....");
+
+    if(!project || project.length === 0) {
+        return next(new ErrorHandler(404, "Incorrect IssueId."));
+    }
+
+    return res.status(200).json({status: true, project: project})
+}
+
 export const searchProject = async(req, res, next) => {
     const {projectName, authorName} = req.body;
 
