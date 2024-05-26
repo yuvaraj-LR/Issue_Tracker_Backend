@@ -31,7 +31,17 @@ export const createIssue = async(req, res, next) => {
         const { projectId } = req.query;
         const { name, description, labels, author} = req.body;
 
-        const timestamp = new Date().toDateString();
+        console.log(name, description, labels, author, "req.body.dataa......");
+
+        const now = new Date();
+
+        // Format the date to "May 20 2024"
+        const timestamp = new Intl.DateTimeFormat('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+        }).format(now);
+        console.log(timestamp, "formattedDate...");
 
         const updateIssue = await updateProjectRepo(projectId, name, description, labels, author, timestamp);
         console.log(updateIssue, "updateIssuee...");
@@ -165,6 +175,8 @@ export const deleteIssue = async(req, res, next) => {
     try {
         const {projectId, issueId} = req.query;
 
+        console.log(projectId, issueId, "..........idd.........");
+
         const project = await findProjectRepo({"_id": projectId});
         console.log(project, "project");
 
@@ -175,9 +187,9 @@ export const deleteIssue = async(req, res, next) => {
         const issueIndex = project[0].issues.findIndex(issue => issue._id == issueId);
         console.log(issueIndex, "indexx...");
 
-        if(issueIndex == -1) {
-            return next(new ErrorHandler(404, "Incorrect IssueId."))
-        }
+        // if(issueIndex == -1) {
+        //     return next(new ErrorHandler(404, "Incorrect IssueId."))
+        // }
 
         project[0].issues.splice(issueIndex, 1);
         await project[0].save();
