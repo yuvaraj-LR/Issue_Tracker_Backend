@@ -1,254 +1,185 @@
-[
-  {
-    "_id": {
-      "$oid": "664a1dd3448860d778152d73"
-    },
-    "name": "Bug Tracker Enhancement",
-    "description": "The Bug Tracker Enhancement project aims to improve the current issue tracking system by adding new features and optimizing existing ones. Key enhancements include a more intuitive user interface, advanced filtering options, and real-time notifications. The project will also focus on integrating third-party tools such as Slack and GitHub, allowing seamless communication and version control. Additional security measures will be implemented to protect sensitive data. Overall, the goal is to increase efficiency and user satisfaction by making the bug tracking process more streamlined and user-friendly.",
-    "author": "John Smith",
-    "timestamp": "Aug 15 2023",
-    "issues": [
-      {
-        "name": "UI Improvement",
-        "description": "Improve the overall look and feel of the user interface.",
-        "labels": [
-          "UI",
-          "Frontend"
-        ],
-        "author": "Alice Green",
-        "timestamp": "Sep 20 2023"
-      },
-      {
-        "name": "Database Optimization",
-        "description": "Optimize database queries to enhance performance.",
-        "labels": [
-          "Database",
-          "Backend"
-        ],
-        "author": "Bob White",
-        "timestamp": "Oct 10 2023"
-      },
-      {
-        "name": "Bug Fix in Login Module",
-        "description": "Resolve the bug that prevents users from logging in.",
-        "labels": [
-          "Bug",
-          "Backend"
-        ],
-        "author": "Carol Black",
-        "timestamp": "Nov 5 2023"
-      }
-    ],
-    "__v": 0
+[{
+  "_id": {
+    "$oid": "66548b40bae951910df7fc2c"
   },
-  {
-    "_id": {
-      "$oid": "664a1dfa448860d778152d75"
+  "name": "TrackPro",
+  "description": "TrackPro is a full-stack web application designed to help teams track project progress and manage issues efficiently. The platform offers a user-friendly interface for creating, assigning, and tracking tasks. It includes features like real-time updates, notifications, and detailed analytics to ensure that projects stay on track. By centralizing all project-related information, TrackPro aims to improve team collaboration and productivity.",
+  "author": "Yuvaraj",
+  "timestamp": "May 10, 2023",
+  "issues": [
+    {
+      "name": "User Authentication",
+      "description": "Implement user login and registration functionality, ensuring secure access to the application. This includes creating a login form, handling user sessions, and integrating password encryption. The goal is to provide a seamless and secure authentication process for all users.",
+      "labels": [
+        "Backend",
+        "Database"
+      ],
+      "author": "Bob Smith",
+      "timestamp": "May 12, 2023"
     },
-    "name": "Customer Feedback Portal",
-    "description": "The Customer Feedback Portal project is designed to create an interactive platform where customers can submit their feedback and suggestions. The portal will feature a user-friendly interface that allows customers to rate services, provide detailed comments, and suggest new features. Feedback will be categorized and analyzed to generate actionable insights for the product development team. The project aims to foster a stronger connection with customers by showing them that their opinions matter, ultimately leading to improved products and services.",
-    "author": "Jane Doe",
-    "timestamp": "Jul 8 2023",
-    "issues": [
-      {
-        "name": "UI Improvement",
-        "description": "Improve the overall look and feel of the user interface.",
-        "labels": [
-          "UI",
-          "Frontend"
-        ],
-        "author": "Alice Green",
-        "timestamp": "Aug 12 2023"
-      },
-      {
-        "name": "Database Optimization",
-        "description": "Optimize database queries to enhance performance.",
-        "labels": [
-          "Database",
-          "Backend"
-        ],
-        "author": "Bob White",
-        "timestamp": "Sep 3 2023"
-      },
-      {
-        "name": "Bug Fix in Login Module",
-        "description": "Resolve the bug that prevents users from logging in.",
-        "labels": [
-          "Bug",
-          "Backend"
-        ],
-        "author": "Carol Black",
-        "timestamp": "Oct 25 2023"
-      }
-    ],
-    "__v": 0
+    {
+      "name": "Frontend Styling",
+      "description": "Design and implement the frontend interface using React. This involves creating responsive layouts, styling components with CSS, and ensuring a consistent and appealing design across all pages. The focus is on enhancing the user experience and making the application visually appealing.",
+      "labels": [
+        "Frontend",
+        "UI"
+      ],
+      "author": "Charlie Brown",
+      "timestamp": "May 14, 2023"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66548b40bae951910df7fc2d"
   },
-  {
-    "_id": {
-      "$oid": "664a1e2b448860d778152d77"
+  "name": "TaskManager",
+  "description": "TaskManager is a comprehensive web application designed to help teams manage and assign tasks efficiently. The app provides features like task creation, assignment, and tracking, along with a notification system to keep everyone informed of updates and deadlines. TaskManager aims to streamline the task management process, improve team collaboration, and boost overall productivity through a user-friendly interface and robust functionality.",
+  "author": "David Clark",
+  "timestamp": "May 15, 2023",
+  "issues": [
+    {
+      "name": "Task Creation",
+      "description": "Allow users to create and assign tasks within the application. This includes providing a form for task details, setting priorities, and assigning tasks to team members. The feature aims to facilitate efficient task management and ensure that all tasks are clearly defined and assigned.",
+      "labels": [
+        "Backend",
+        "Database"
+      ],
+      "author": "Eve Adams",
+      "timestamp": "May 16, 2023"
     },
-    "name": "Employee Performance Tracker",
-    "description": "This project focuses on developing an Employee Performance Tracker that enables managers to monitor and evaluate the performance of their team members. The system will include features such as goal setting, performance reviews, and progress tracking. It will provide detailed analytics and reports to help managers make informed decisions about promotions, bonuses, and professional development. By implementing this tracker, the organization aims to enhance productivity, recognize high performers, and identify areas for improvement.",
-    "author": "Michael Johnson",
-    "timestamp": "Sep 1 2023",
-    "issues": [
-      {
-        "name": "UI Improvement",
-        "description": "Improve the overall look and feel of the user interface.",
-        "labels": [
-          "UI",
-          "Frontend"
-        ],
-        "author": "Alice Green",
-        "timestamp": "Oct 5 2023"
-      },
-      {
-        "name": "Database Optimization",
-        "description": "Optimize database queries to enhance performance.",
-        "labels": [
-          "Database",
-          "Backend"
-        ],
-        "author": "Bob White",
-        "timestamp": "Nov 15 2023"
-      },
-      {
-        "name": "Bug Fix in Login Module",
-        "description": "Resolve the bug that prevents users from logging in.",
-        "labels": [
-          "Bug",
-          "Backend"
-        ],
-        "author": "Carol Black",
-        "timestamp": "Dec 10 2023"
-      }
-    ],
-    "__v": 0
+    {
+      "name": "Notification System",
+      "description": "Implement a notification system to alert users of task updates, deadlines, and other important events. This feature will include real-time notifications, email alerts, and a notification center within the app to ensure that users are always informed of critical updates.",
+      "labels": [
+        "Backend",
+        "Frontend"
+      ],
+      "author": "Frank White",
+      "timestamp": "May 18, 2023"
+    },
+    {
+      "name": "Responsive Design",
+      "description": "Ensure the application is responsive and works seamlessly on all devices, including desktops, tablets, and mobile phones. This involves designing flexible layouts, using media queries, and testing the app on various screen sizes to provide a consistent user experience across all devices.",
+      "labels": [
+        "Frontend",
+        "UI"
+      ],
+      "author": "Grace Green",
+      "timestamp": "May 20, 2023"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66548b40bae951910df7fc2e"
   },
-  {
-    "_id": {
-      "$oid": "664a1e46448860d778152d79"
+  "name": "BugTracker",
+  "description": "BugTracker is a specialized tool for tracking bugs and issues in software projects. The application allows users to report, prioritize, and manage bugs through an intuitive interface. Features include detailed bug reporting, search functionality, and categorization to help teams identify and resolve issues quickly. BugTracker aims to improve software quality and streamline the bug management process.",
+  "author": "Hannah Lee",
+  "timestamp": "May 22, 2023",
+  "issues": [
+    {
+      "name": "Bug Reporting",
+      "description": "Allow users to report bugs with detailed descriptions, including steps to reproduce, expected and actual results, and severity levels. This feature ensures that all reported bugs contain sufficient information for developers to diagnose and fix the issues efficiently.",
+      "labels": [
+        "Backend",
+        "Frontend"
+      ],
+      "author": "Ian Thomas",
+      "timestamp": "May 23, 2023"
     },
-    "name": "E-commerce Website Redesign",
-    "description": "The E-commerce Website Redesign project aims to revamp the existing online store to provide a better shopping experience for customers. The redesign will include a modern and responsive design, faster load times, and improved navigation. New features such as a personalized recommendation engine, enhanced search functionality, and a streamlined checkout process will be added. The project will also focus on improving SEO to attract more organic traffic. The goal is to increase user engagement and conversion rates, ultimately boosting sales.",
-    "author": "Emily Brown",
-    "timestamp": "May 19 2024",
-    "issues": [
-      {
-        "name": "UI Improvement",
-        "description": "Improve the overall look and feel of the user interface.",
-        "labels": [
-          "UI",
-          "Frontend"
-        ],
-        "author": "Alice Green",
-        "timestamp": "Jun 09 2024"
-      },
-      {
-        "name": "Database Optimization",
-        "description": "Optimize database queries to enhance performance.",
-        "labels": [
-          "Database",
-          "Backend"
-        ],
-        "author": "Bob White",
-        "timestamp": "Jun 09 2024"
-      },
-      {
-        "name": "Bug Fix in Login Module",
-        "description": "Resolve the bug that prevents users from logging in.",
-        "labels": [
-          "Bug",
-          "Backend"
-        ],
-        "author": "Carol Black",
-        "timestamp": "Jun 09 2024"
-      }
-    ],
-    "__v": 0
+    {
+      "name": "Search Functionality",
+      "description": "Implement a search feature to allow users to find bugs by keywords, filters, and other criteria. This functionality helps users quickly locate specific bugs, view their details, and track their resolution status, improving the efficiency of bug management.",
+      "labels": [
+        "Frontend",
+        "UI"
+      ],
+      "author": "Jack Wilson",
+      "timestamp": "May 24, 2023"
+    },
+    {
+      "name": "Bug Prioritization",
+      "description": "Add functionality to prioritize and categorize bugs based on their severity and impact. This feature helps teams focus on resolving the most critical issues first and manage their bug-fixing efforts more effectively, ensuring that high-priority bugs are addressed promptly.",
+      "labels": [
+        "Backend",
+        "Bug"
+      ],
+      "author": "Karen Martinez",
+      "timestamp": "May 25, 2023"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66548b40bae951910df7fc2f"
   },
-  {
-    "_id": {
-      "$oid": "664a1e61448860d778152d7b"
+  "name": "TimeTracker",
+  "description": "TimeTracker is a web application designed to help users track and log time spent on various tasks. The app provides features like time logging, detailed reports, and analytics to help users understand their time usage and improve productivity. TimeTracker aims to offer a simple yet effective solution for time management, enabling users to optimize their workflows and achieve their goals more efficiently.",
+  "author": "Liam Roberts",
+  "timestamp": "May 26, 2023",
+  "issues": [
+    {
+      "name": "Time Logging",
+      "description": "Allow users to log time spent on tasks with details such as task name, duration, and notes. This feature helps users keep accurate records of their work hours and provides insights into how their time is being utilized, facilitating better time management.",
+      "labels": [
+        "Backend",
+        "Database"
+      ],
+      "author": "Megan Scott",
+      "timestamp": "May 27, 2023"
     },
-    "name": "Cloud Infrastructure Optimization",
-    "description": "The Cloud Infrastructure Optimization project focuses on enhancing the efficiency and scalability of our current cloud infrastructure. This includes optimizing resource allocation, improving security protocols, and implementing cost-saving measures. The project will also explore the integration of new cloud services to support future growth. By optimizing our cloud infrastructure, we aim to provide better performance and reliability for our applications, reduce operational costs, and ensure data security and compliance.",
-    "author": "Sarah Davis",
-    "timestamp": "May 19 2024",
-    "issues": [
-      {
-        "name": "UI Improvement",
-        "description": "Improve the overall look and feel of the user interface.",
-        "labels": [
-          "UI",
-          "Frontend"
-        ],
-        "author": "Alice Green",
-        "timestamp": "Jun 09 2024"
-      },
-      {
-        "name": "Database Optimization",
-        "description": "Optimize database queries to enhance performance.",
-        "labels": [
-          "Database",
-          "Backend"
-        ],
-        "author": "Bob White",
-        "timestamp": "Jun 09 2024"
-      },
-      {
-        "name": "Bug Fix in Login Module",
-        "description": "Resolve the bug that prevents users from logging in.",
-        "labels": [
-          "Bug",
-          "Backend"
-        ],
-        "author": "Carol Black",
-        "timestamp": "Jun 09 2024"
-      }
-    ],
-    "__v": 0
+    {
+      "name": "Analytics Dashboard",
+      "description": "Create a dashboard to visualize time logs and productivity metrics. This feature includes charts, graphs, and summaries to help users analyze their time usage, identify patterns, and make informed decisions to enhance their productivity and efficiency.",
+      "labels": [
+        "Frontend",
+        "UI"
+      ],
+      "author": "Nathan Young",
+      "timestamp": "May 28, 2023"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66548b40bae951910df7fc30"
   },
-  {
-    "_id": {
-      "$oid": "664a4073e5d8dad66cedad0f"
+  "name": "CodeReview",
+  "description": "CodeReview is an application designed to streamline the code review process in software development projects. The app allows developers to submit code for review, comment on code changes, and track review statuses. With features like real-time collaboration, detailed feedback, and integration with version control systems, CodeReview aims to improve code quality and facilitate efficient peer reviews.",
+  "author": "Olivia Carter",
+  "timestamp": "May 29, 2023",
+  "issues": [
+    {
+      "name": "Code Submission",
+      "description": "Allow developers to submit code changes for review, including file diffs and commit messages. This feature ensures that all code changes are reviewed before merging, maintaining high code quality and catching potential issues early in the development process.",
+      "labels": [
+        "Backend",
+        "Frontend"
+      ],
+      "author": "Paul Harris",
+      "timestamp": "May 30, 2023"
     },
-    "name": "Mobile App Development",
-    "description": "The Mobile App Development project is aimed at creating a new mobile application that caters to the needs of our target audience. The app will be available on both iOS and Android platforms and will feature a clean and intuitive interface. Key functionalities will include real-time updates, push notifications, and offline access. The project will also incorporate user feedback to continuously improve the app's features and performance. The ultimate objective is to provide users with a seamless and engaging mobile experience.",
-    "author": "Daniel Williams",
-    "timestamp": "May 19 2024",
-    "issues": [
-      {
-        "name": "UI Improvement",
-        "description": "Improve the overall look and feel of the user interface.",
-        "labels": [
-          "UI",
-          "Frontend"
-        ],
-        "author": "Alice Green",
-        "timestamp": "Jun 09 2024"
-      },
-      {
-        "name": "Database Optimization",
-        "description": "Optimize database queries to enhance performance.",
-        "labels": [
-          "Database",
-          "Backend"
-        ],
-        "author": "Bob White",
-        "timestamp": "Jun 09 2024"
-      },
-      {
-        "name": "Bug Fix in Login Module",
-        "description": "Resolve the bug that prevents users from logging in.",
-        "labels": [
-          "Bug",
-          "Backend"
-        ],
-        "author": "Carol Black",
-        "timestamp": "Jun 09 2024"
-      }
-    ],
-    "__v": 0
-  }
-]
+    {
+      "name": "Review Comments",
+      "description": "Enable reviewers to comment on specific lines of code, providing detailed feedback and suggestions. This feature facilitates clear and constructive communication between developers, helping to improve code quality and ensure that best practices are followed.",
+      "labels": [
+        "Frontend",
+        "UI"
+      ],
+      "author": "Quinn Lee",
+      "timestamp": "May 31, 2023"
+    },
+    {
+      "name": "Integration with Version Control",
+      "description": "Integrate the application with version control systems like Git to streamline the review process. This feature allows for automatic updates of code changes, seamless tracking of review statuses, and easy merging of approved code, enhancing overall workflow efficiency.",
+      "labels": [
+        "Backend",
+        "Database"
+      ],
+      "author": "Rachel Adams",
+      "timestamp": "June 1, 2023"
+    }
+  ]
+}]
