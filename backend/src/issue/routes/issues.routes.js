@@ -16,7 +16,7 @@ router.route("/getIssueById").get(getSpecificIssue);
 router.route("/createProject").post(createProject);
 router.route("/createIssue").post(createIssue);
 router.route("/searchProject").post(searchProject);
-router.route("/filterIssue").post(filterIssue);
+router.route("/filterIssueByLabel").post(filterIssue);
 
 // DELETE routes
 router.route("/deleteProject").delete(deleteProject);
