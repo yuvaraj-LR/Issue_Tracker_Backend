@@ -8,17 +8,23 @@ dotenv.config({ path: ".env" });
 import {
     errorHandlerMiddleware,
     handleUncaughtError
-} from "./middleware/errorHandlerMiddleware.js"
+} from "./middleware/errorHandlerMiddleware.js";
 
-import issueRoutes from "./src/issue/routes/issues.routes.js"
+import issueRoutes from "./src/issue/routes/issues.routes.js";
+import userRoutes from "./src/user/routes/user.routes.js";
 
 const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
 
+// User Login routes.
+app.use("/api/user", userRoutes);
+
 // Configuring routes.
 app.use("/api/issueTracker", issueRoutes);
+
+
 
 // Default path.
 app.get("/", (req, res) => {
